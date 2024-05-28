@@ -23,9 +23,12 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
-    "electron-updater": "^6.1.7"
+    "electron-updater": "^6.1.7",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.0"
   },
   "devDependencies": {
+    "@arco-design/web-vue": "^2.55.2",
     "@electron-toolkit/eslint-config": "^1.0.2",
     "@electron-toolkit/eslint-config-ts": "^1.0.1",
     "@electron-toolkit/tsconfig": "^1.0.1",
