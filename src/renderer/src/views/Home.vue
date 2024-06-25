@@ -23,6 +23,10 @@ const routeName = ref(useRoute().name as string);
 onBeforeUpdate(() => {
   routeName.value = useRoute().name as string;
 });
+
+const changeOpType = () => {
+  window.ipcRenderer.send('change-op-type', 'home');
+};
 </script>
 
 

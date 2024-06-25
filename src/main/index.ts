@@ -9,16 +9,25 @@ function createWindow(): void {
     width: 900,
     height: 670,
     show: false,
-    frame: false,
+    frame: true,
     transparent: true,
     autoHideMenuBar: true,
-    ...(process.platform === 'linux' ? { icon } : {}),
+    titleBarStyle: 'hidden',
+    resizable: false,
+    icon: icon,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
+      sandbox: false,
+      contextIsolation: false
     }
   })
+if(NODE_ENV === 'development'){
+  mainWindow.webContents.openDevTools()
+}
 
+ipcMain.on('loginOrRegister', (event, param) => {
+  console.log("收到渲染进程消息")
+})
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
