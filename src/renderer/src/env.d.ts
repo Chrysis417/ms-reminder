@@ -6,3 +6,5 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+// 用于解决vue-router找不到的问题
+declare module "vue-router"
